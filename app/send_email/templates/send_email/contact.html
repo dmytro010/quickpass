@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Password generate and send!</title>
+    </head>
+    <body>
+        <h1>Generate password and send it to your email!</h1>
+        <h3>Quick password for you is: </h3>
+            <h2><strong> {{secret}} <strong></h2>
+        <h3>Send it by email to save:</h3>
+        <form action="{%url 'contact'%}" method="POST">
+
+            
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Send</button>
+        </form>
+    </body>
+</html>
